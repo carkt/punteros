@@ -1,0 +1,47 @@
+//librerias
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+struct Zapateria{
+	char marca[20];
+	int talla;
+	float precio;
+	int cantidad;
+	float total;
+	
+}zapato,*p_zapa =&zapato;
+//prototipos
+void ingresar();
+void mostrar(Zapateria *);
+
+
+int main(){
+	ingresar();
+	mostrar(p_zapa);
+	getch();
+	return 0;
+	
+}
+
+void ingresar(){
+	cout<<"ingrese la marca : "<<endl;
+	cin.getline(p_zapa->marca,30);
+	cout<<"ingrese la talla : "<<endl;
+	cin>>p_zapa->precio;
+	cout<<"ingrese el precio : "<<endl;
+	cin>>p_zapa->precio;
+	cout<<"ingrese la cantidad: "<<endl;
+	cin>>p_zapa->cantidad;
+	
+	p_zapa->total=p_zapa->precio*p_zapa->cantidad;
+}
+
+void mostrar(Zapateria *p_zapa){
+	cout<<"************************Detalles del pedido ingresado************************"<<endl;
+	cout<<"\n marca : "<<p_zapa->marca<<"\n"<<endl;
+	cout<<"\n talla : "<<p_zapa->talla<<"\n"<<endl;
+	cout<<"\n precio : "<<p_zapa->precio<<"\n"<<endl;
+	cout<<"\n cantidad : "<<p_zapa->cantidad<<"\n"<<endl;
+	cout<<"\n total a cancelar : "<<p_zapa->total<<endl;
+}
